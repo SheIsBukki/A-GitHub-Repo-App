@@ -41,7 +41,7 @@ const RepoCard = ({ currentRepos }) => {
         <CardFooter>
           <Text className="repoLanguage">Main language: {repo.language}</Text>
           <Button>
-            <a href="/RepoPage">View more</a>
+            <Link to="/RepoPage">View more</Link>
           </Button>
         </CardFooter>
       </Card>

@@ -31,4 +31,5 @@ html {
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  font-size: 2rem;
 }

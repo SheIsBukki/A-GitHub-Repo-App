@@ -1,5 +1,8 @@
-body {
-  background-color: #AEAEA5;
+main {
   font-size: 2rem;
-  font-family: monospace;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
 }

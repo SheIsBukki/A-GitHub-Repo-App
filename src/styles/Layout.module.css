@@ -1,3 +1,7 @@
+.navigationWrapper {
+  font-size: 2rem;
+}
+
 .navigationWrapper nav {
   background-color: #02BF3A;
   padding: 2rem;
