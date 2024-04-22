@@ -57,4 +57,5 @@ These resources were useful in helping me build this project
 -   [Maximizing SEO with React Helmet: A Complete Guide](https://www.dhiwise.com/post/maximizing-seo-impact-with-react-helmet-a-complete-guid)
 
 ### Author
+
 Bukola Ogunleye
