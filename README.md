@@ -26,7 +26,7 @@ _Implement a Web App using GitHub API to fetch your GitHub repositories portfoli
 
 ### Links
 
--   Live Site URL:
+-   Live Site URL: https://a-git-hub-repo-app.vercel.app
 
 ## My process
 
@@ -55,3 +55,6 @@ These resources were useful in helping me build this project
 -   [How I Implemented an API fetch of my GitHub](https://blog.devgenius.io/how-i-implemented-an-api-fetch-of-my-github-53b2234dfc51)
 -   [How to Avoid Breaking Your React Application in Production](https://www.freecodecamp.org/news/how-to-avoid-breaking-your-react-app-in-production/)
 -   [Maximizing SEO with React Helmet: A Complete Guide](https://www.dhiwise.com/post/maximizing-seo-impact-with-react-helmet-a-complete-guid)
+
+### Author
+Bukola Ogunleye
