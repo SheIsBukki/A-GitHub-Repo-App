@@ -1,0 +1,10 @@
+.repoCardWrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 768px) {
+  .repoCardWrapper {
+    display: block;
+  }
+}

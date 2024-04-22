@@ -1,0 +1,21 @@
+.navigationWrapper nav {
+  background-color: #02BF3A;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.navigationWrapper ul{
+  max-width: 50rem;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.navigationWrapper li {
+  color: #FFF;
+  border: 1px solid;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
