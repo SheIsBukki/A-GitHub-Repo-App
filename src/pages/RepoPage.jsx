@@ -52,10 +52,10 @@ const RepoPage = () => {
           })}
         </p>
         <Button>
-          <a href={repo.html_url}>View Soure Code on GitHub</a>
+          <a target="_blank" href={repo.html_url}>View Soure Code on GitHub</a>
         </Button>
         <Button>
-          <Link to={repo.homepage}>Visit site</Link>
+          <Link target="_blank" to={repo.homepage}>Visit site</Link>
         </Button>
       </article>
     );
