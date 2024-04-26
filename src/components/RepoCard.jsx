@@ -12,8 +12,9 @@ import {
 import Home from "../pages/Home";
 import styles from "../styles/RepoCard.module.css";
 import RepoPage from "../pages/RepoPage";
+import Paginate from "../components/Pagination";
 
-const RepoCard = ({ currentRepos }) => {
+const RepoCard = () => {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -31,7 +32,7 @@ const RepoCard = ({ currentRepos }) => {
 
   const repositoryCards = repos.map((repo) => {
     return (
-      <Card variant="outline" size="sm" key={crypto.randomUUID()}>
+      <Card variant="outline" size="sm" key={repo.id}>
         <CardHeader className="repoTitle">
           <Heading>{repo.name}</Heading>
         </CardHeader>
@@ -41,16 +42,55 @@ const RepoCard = ({ currentRepos }) => {
         <CardFooter>
           <Text className="repoLanguage">Main language: {repo.language}</Text>
           <Button>
-            <Link to="/RepoPage">View more</Link>
+            <Link to={`/RepoPage/${repo.name}`}>View more</Link>
           </Button>
         </CardFooter>
       </Card>
     );
   });
 
+  // // States to create pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [reposPerPage] = useState(2);
+
+  // // States to store the index of a page's first and last post
+  const indexOfLastRepo = currentPage * reposPerPage;
+  const indexOfFirstRepo = indexOfLastRepo - reposPerPage;
+  const currentRepos = repositoryCards.slice(indexOfFirstRepo, indexOfLastRepo);
+
+  //// This sets the currentPage to the number received
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const previousPage = () => {
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const nextPage = () => {
+    if (currentPage !== Math.ceil(repos.length / reposPerPage)) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
   return (
     <div className={styles.repoCardWrapper}>
-      {loading ? <p>Loading...</p> : <>{repositoryCards}</>}
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <section>
+          {currentRepos}
+          <Paginate
+            reposPerPage={reposPerPage}
+            totalRepos={repositoryCards.length}
+            paginate={paginate}
+            previousPage={previousPage}
+            nextPage={nextPage}
+          />
+        </section>
+      )}
     </div>
   );
 };

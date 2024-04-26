@@ -3,9 +3,9 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import RepoPage from "./pages/RepoPage";
 import ErrorPage from "./pages/ErrorPage";
-import Repositories from "./components/Repositories";
 import TestErrorBoundary from "./pages/TestErrorBoundary";
 import SEO from "./components/SEO";
+import AppOutlet from "./components/AppOutlet"
 // import "./App.css";
 
 function App() {
@@ -21,15 +21,16 @@ function App() {
         />
         <Route
           path="/RepoPage"
-          element={<RepoPage />}
+          element={<AppOutlet />}
           render={() => (
             <SEO
-              title="Paginated Repositories Page"
-              description="One GitHub at a time"
+              title="Clicked repository"
+              description="One repository at a time"
             />
           )}
-        />
-        <Route path="/Repositories" element={<Repositories />} />
+        >
+          <Route path=":repoId" element={<RepoPage />} />
+        </Route>
         <Route
           path="/TestErrorBoundary"
           element={<TestErrorBoundary />}

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
-import Paginate from "../components/Pagination";
 // import RepoCard from "../components/RepoCard";
 
 const RepoPage = () => {
   // // States to fetch the repositories
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { repoId } = useParams();
 
   useEffect(() => {
     fetch(`https://api.github.com/users/sheisbukki/repos`)
@@ -23,7 +23,7 @@ const RepoPage = () => {
 
   const Repositories = repos.map((repo) => {
     return (
-      <article key={crypto.randomUUID()}>
+      <article key={repo.id}>
         <h2 className="title">{repo.name}</h2>
         <p className="description">{repo.description}</p>
         <p className="language">Main language: {repo.language}</p>
@@ -52,58 +52,20 @@ const RepoPage = () => {
           })}
         </p>
         <Button>
-          <a target="_blank" href={repo.html_url}>View Soure Code on GitHub</a>
+          <a href={repo.html_url}>View Soure Code on GitHub</a>
         </Button>
         <Button>
-          <Link target="_blank" to={repo.homepage}>Visit site</Link>
+          <a href={repo.homepage}>Visit live site</a>
         </Button>
+        <Link to="/">Back to repositories</Link>
       </article>
     );
   });
 
-  // // States to create pagination
-  const [currentPage, setCurrentPage] = useState(1);
-  const [reposPerPage] = useState(1);
-
-  // // States to store the index of a page's first and last post
-  const indexOfLastRepo = currentPage * reposPerPage;
-  const indexOfFirstRepo = indexOfLastRepo - reposPerPage;
-  const currentRepos = Repositories.slice(indexOfFirstRepo, indexOfLastRepo);
-
-  //// This sets the currentPage to the number received
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
-  const previousPage = () => {
-    if (currentPage !== 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
-
-  const nextPage = () => {
-    if (currentPage !== Math.ceil(repos.length / reposPerPage)) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
   return (
     <main>
       <h1 className="pageTitle">Repositories</h1>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <section>
-          {currentRepos}
-          <Paginate
-            reposPerPage={reposPerPage}
-            totalRepos={Repositories.length}
-            paginate={paginate}
-            previousPage={previousPage}
-            nextPage={nextPage}
-          />
-        </section>
-      )}
+      {loading ? <p>Loading...</p> : <section>{Repositories}</section>}
     </main>
   );
 };

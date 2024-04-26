@@ -18,6 +18,39 @@ const Repositories = () => {
       });
   }, []);
 
+
+//// This useEffect, and the following three const declarations are together in a way. They are supposed to help create a component that allows clicking on a repo from the pagination of all repos to redirected to the specific repo clicked, but it doesn't work...
+  
+//   useEffect(() => {
+//     () => {
+//       const fetchRepos = async () => {
+//         setLoading(true);
+//         const response = await axios.get(
+//           "https://api.github.com/users/sheisbukki/repos",
+//         );
+//         setRepos(response.data);
+//         setLoading(false);
+//       };
+//       fetchRepos();
+//     };
+//   }, []);
+// 
+//   const { repoId } = useParams();
+//   const eachRepo = repos.find((eachRepo) => eachRepo.id == repoId);
+//   const {
+//     name,
+//     html_url,
+//     forks,
+//     stargazers_count,
+//     updated_at,
+//     created_at,
+//     homepage,
+//     pushed_at,
+//     language,
+//     description,
+//   } = eachRepo || {};
+
+
   return (
     <main>
       {loading ? (
