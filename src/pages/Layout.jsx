@@ -11,9 +11,6 @@ export default function Layout() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/RepoPage">Repositories</Link>
-          </li>
-          <li>
             <Link to="/TestErrorBoundary">Test Error Boundary</Link>
           </li>
           {/* <li> */}

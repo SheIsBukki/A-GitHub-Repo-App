@@ -29,7 +29,7 @@ function App() {
             />
           )}
         >
-          <Route path=":repoId" element={<RepoPage />} />
+          <Route path="/RepoPage/:repoName" element={<RepoPage />} />
         </Route>
         <Route
           path="/TestErrorBoundary"

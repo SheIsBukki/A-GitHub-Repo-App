@@ -19,7 +19,7 @@ const Repositories = () => {
   }, []);
 
 
-//// This useEffect, and the following three const declarations are together in a way. They are supposed to help create a component that allows clicking on a repo from the pagination of all repos to redirected to the specific repo clicked, but it doesn't work...
+//// This useEffect, and the following three const declarations are together in a way. They are supposed to help create a component that allows clicking on a repo from the pagination of all repos to redirecte to the specific repo clicked, but it doesn't work...
   
 //   useEffect(() => {
 //     () => {
