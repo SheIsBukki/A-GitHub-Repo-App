@@ -14,9 +14,9 @@ export default function Layout() {
           <li>
             <Link to="/TestErrorBoundary">Test Error Boundary</Link>
           </li>
-          <li>
-            <Link to="/ErrorPage">Error 404</Link>
-          </li>
+          {/* <li> */}
+          {/*   <Link to="/ErrorPage">Error 404</Link> */}
+          {/* </li> */}
         </ul>
       </nav>
       <Outlet />
