@@ -1,25 +1,54 @@
 .navigationWrapper {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .navigationWrapper nav {
-  background-color: #02BF3A;
+  background-color: #222629;
   padding: 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.navigationWrapper h1 {
+  color: #6B6E70;
+  font-size: 3rem;
+  letter-Spacing: 0.75rem;
 }
 
 .navigationWrapper ul{
-  max-width: 50rem;
-  width: 100%;
   display: inline-flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   list-style: none;
 }
 
 .navigationWrapper li {
-  color: #FFF;
-  border: 1px solid;
+  color: #dfdfdf;
+  border: none;
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  margin-inline: 0.5rem;
+/*  border-radius: 0.5rem;*/
+
+  &:hover {
+/*    background-color: #6B6E70;*/
+/*    color: #86C232;*/
+    border-block-end: solid 2px #86C232;
+  }
+}
+
+
+
+@media only screen and (max-width: 900px) {
+  .navigationWrapper nav {
+    padding-inline: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .navigationWrapper .navigation {
+    display: none;
+  }
+
+  .navigationWrapper h1 {
+    letter-Spacing: unset;
+    font-size: 2rem;
+  }
 }

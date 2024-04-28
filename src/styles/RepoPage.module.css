@@ -1,0 +1,86 @@
+main {
+  max-width: 768px;
+  width: 100%;
+  margin: 2rem auto;
+  color: #dfdfdf;
+}
+
+.pageTitle {
+  text-align: center !important;
+  font-size: 3rem !important;
+  padding-block: 1rem !important;
+  letter-spacing: 0.45rem !important;
+  color: #dfdfdf !important;
+}
+
+.repo {
+  padding: 1rem;
+/*  border: 1px solid #02BF3A;*/
+}
+
+.smallViewport {
+  display: none;
+}
+
+.repoTable div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border: 1px solid #86C232;
+  padding-inline-start: 0.5rem;
+  padding-block: 0.25rem;
+  border-radius: 0.5rem;
+  background-color: #6B6E7050;
+}
+
+.repoInfo {
+  padding-inline: 0.5rem;
+}
+
+.verticalLine {
+  border-inline-end: 2px solid #61892F;
+}
+
+.repo p, h2 {
+  line-height: 1.75;
+}
+
+.buttonsWrapper {
+  margin-block: 2rem 0.25rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonsWrapper button {
+  margin-inline: 1rem;
+  background-color: #86C232;
+  color: #FFF;
+
+  &:hover {
+    color: #86C232;
+    background-color: #61892F;
+  }
+}
+
+Button.backToHome {
+  text-align: center;
+  padding: auto;
+  margin: 2rem;
+  color: #86C232;
+  background-color: #6B6E70;
+
+  &:hover {
+    background-color: #474B4F;
+  }
+}
+
+
+@media only screen and (max-width: 424px) {
+  .repoTable {
+    display: none;
+  }
+
+  .smallViewport {
+    display: unset;
+  }
+}

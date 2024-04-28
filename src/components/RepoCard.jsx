@@ -32,7 +32,13 @@ const RepoCard = () => {
 
   const repositoryCards = repos.map((repo) => {
     return (
-      <Card variant="outline" size="sm" key={repo.id}>
+      <Card
+        style={{ maxWidth: "480px", width: "100%", marginInline: "auto", borderColor: "#474B4F", backgroundColor: "222629"}}
+        className={styles.card}
+        variant="outline"
+        size="lg"
+        key={repo.id}
+      >
         <CardHeader className="repoTitle">
           <Heading>{repo.name}</Heading>
         </CardHeader>
@@ -40,10 +46,12 @@ const RepoCard = () => {
           <Text>{repo.description}</Text>
         </CardBody>
         <CardFooter>
-          <Text className="repoLanguage">Main language: {repo.language}</Text>
-          <Button>
-            <Link to={`/RepoPage/${repo.name}`}>View more</Link>
-          </Button>
+          <div className={styles.footerWrapper}>
+            <Text className="repoLanguage">Main language: {repo.language}</Text>
+            <Button className={styles.button}>
+              <Link to={`/RepoPage/${repo.name}`}>View more</Link>
+            </Button>
+          </div>
         </CardFooter>
       </Card>
     );
@@ -81,7 +89,7 @@ const RepoCard = () => {
         <p>Loading...</p>
       ) : (
         <section>
-          {currentRepos}
+          <div className={styles.cardContainer}>{currentRepos}</div>
           <Paginate
             reposPerPage={reposPerPage}
             totalRepos={repositoryCards.length}

@@ -6,7 +6,7 @@ import ErrorPage from "./pages/ErrorPage";
 import TestErrorBoundary from "./pages/TestErrorBoundary";
 import SEO from "./components/SEO";
 import AppOutlet from "./components/AppOutlet"
-// import "./App.css";
+import "./App.css";
 
 function App() {
   return (

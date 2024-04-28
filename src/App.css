@@ -32,4 +32,5 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
   font-size: 2rem;
+  background-color: #222629 !important;
 }

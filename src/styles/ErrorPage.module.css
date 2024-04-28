@@ -1,0 +1,42 @@
+.errorWrapper {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1.errorTitle {
+  color: #474B4F;
+  font-size: 15rem;
+  font-weight: bolder;
+  margin-block: 0 -2rem;
+}
+
+.errorWrapper p {
+  font-size: 3rem;
+  font-weight: bolder;
+  color: #6B6E70;
+  margin-block: 1rem;
+}
+
+.gif {
+  max-width: 60rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.errorButton:hover {
+  color: #86C232 !important;
+  background-color: #61892F !important;
+}
+
+@media screen and (max-width: 480px) {
+  h1.errorTitle {
+    font-size: 5rem;
+    margin-block: 2rem;
+  }
+
+  .errorWrapper p {
+    font-size: 1.5rem;
+  }
+}
